@@ -21,41 +21,65 @@ The application follows a modular and layered architecture to ensure maintainabi
 
 ```
 com.example.hospitalapp
-├── config                # Application configuration (JDBC, properties)
-│   ├── db               # Database configuration
-│   └── logging          # Logging configuration
+├── config
+│   ├── DatabaseConfig.java
+│   └── LoggingConfig.java
 │
-├── controller            # API or console-based controllers
-│   ├── patient          # Patient-related controllers
-│   ├── doctor           # Doctor-related controllers
-│   └── appointment      # Appointment-related controllers
+├── controller
+│   ├── PatientController.java
+│   ├── DoctorController.java
+│   └── AppointmentController.java
 │
-├── service               # Business logic layer
-│   ├── patient          # Services for patients
-│   ├── doctor           # Services for doctors
-│   └── appointment      # Services for appointments
+├── service
+│   ├── PatientService.java
+│   ├── PatientServiceJdbcImpl.java
+│   ├── DoctorService.java
+│   ├── DoctorServiceJdbcImpl.java
+│   ├── AppointmentService.java
+│   └── AppointmentServiceJdbcImpl.java
 │
-├── repository            # Data access layer
-│   ├── interface        # Repository interfaces
-│   │   ├── patient      # Patient repository interfaces
-│   │   ├── doctor       # Doctor repository interfaces
-│   │   └── appointment  # Appointment repository interfaces
-│   └── impl             # Repository implementations
-│       ├── patient      # PostgreSQL implementation (patient)
-│       ├── doctor       # PostgreSQL implementation (doctor)
-│       └── appointment  # PostgreSQL implementation (appointment)
+├── repository
+│   ├── PatientRepository.java
+│   ├── PatientRepositoryJdbcImpl.java
+│   ├── DoctorRepository.java
+│   ├── DoctorRepositoryJdbcImpl.java
+│   ├── AppointmentRepository.java
+│   └── AppointmentRepositoryJdbcImpl.java
 │
-├── dto                   # Data Transfer Objects
-│   ├── request          # Request DTOs
-│   ├── response         # Response DTOs
-│   └── common           # Common DTOs (e.g., errors)
+├── dto
+│   ├── request
+│   │   ├── PatientRequestDto.java
+│   │   ├── DoctorRequestDto.java
+│   │   └── AppointmentRequestDto.java
+│   ├── response
+│   │   ├── PatientResponseDto.java
+│   │   ├── DoctorResponseDto.java
+│   │   └── AppointmentResponseDto.java
+│   └── common
+│       └── ErrorDto.java
 │
-├── mapper                # DTO ↔ Entity mappers
-├── model                 # Entity classes and enums
-├── exception             # Custom exception classes
-├── util                  # Utility classes (validation, constants, etc.)
-├── main                  # Entry point (console-based)
-└── test                  # Unit and integration tests
+├── model
+│   ├── entity
+│   │   ├── Patient.java
+│   │   ├── Doctor.java
+│   │   └── Appointment.java
+│   └── enum
+│       └── AppointmentStatus.java
+│
+├── exception
+│   ├── PatientNotFoundException.java
+│   ├── DoctorNotFoundException.java
+│   └── AppointmentNotFoundException.java
+│
+├── util
+│   ├── ValidationUtils.java
+│   ├── DateConverter.java
+│   └── Constants.java
+│
+└── main
+    └── console
+        └── MainConsoleApplication.java
+
 
 
 ```
