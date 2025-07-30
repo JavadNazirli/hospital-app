@@ -1,4 +1,4 @@
-# hospital-app-
+# hospital-app
 # Hospital Management Application (Hospital-App)
 
 ## Overview
@@ -17,7 +17,47 @@ The application follows a modular and layered architecture to ensure maintainabi
 - **`util`**: Utility classes for validation, conversion, and constants.
 - **`main`**: Entry point for the console application.
 - **`test`**: Unit tests for core functionalities.
+  ### 📁 Project Structure
 
+```
+com.example.hospitalapp
+├── config                # Application configuration (JDBC, properties)
+│   ├── db               # Database configuration
+│   └── logging          # Logging configuration
+│
+├── controller            # API or console-based controllers
+│   ├── patient          # Patient-related controllers
+│   ├── doctor           # Doctor-related controllers
+│   └── appointment      # Appointment-related controllers
+│
+├── service               # Business logic layer
+│   ├── patient          # Services for patients
+│   ├── doctor           # Services for doctors
+│   └── appointment      # Services for appointments
+│
+├── repository            # Data access layer
+│   ├── interface        # Repository interfaces
+│   │   ├── patient      # Patient repository interfaces
+│   │   ├── doctor       # Doctor repository interfaces
+│   │   └── appointment  # Appointment repository interfaces
+│   └── impl             # Repository implementations
+│       ├── patient      # PostgreSQL implementation (patient)
+│       ├── doctor       # PostgreSQL implementation (doctor)
+│       └── appointment  # PostgreSQL implementation (appointment)
+│
+├── dto                   # Data Transfer Objects
+│   ├── request          # Request DTOs
+│   ├── response         # Response DTOs
+│   └── common           # Common DTOs (e.g., errors)
+│
+├── mapper                # DTO ↔ Entity mappers
+├── model                 # Entity classes and enums
+├── exception             # Custom exception classes
+├── util                  # Utility classes (validation, constants, etc.)
+├── main                  # Entry point (console-based)
+└── test                  # Unit and integration tests
+
+```
 ## Features
 - **Patient Management**: Add, update, delete, and retrieve patient information.
 - **Doctor Management**: Manage doctor details and specialties.
