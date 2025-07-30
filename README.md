@@ -57,6 +57,7 @@ com.example.hospitalapp
 ├── main                  # Entry point (console-based)
 └── test                  # Unit and integration tests
 
+
 ```
 ## Features
 - **Patient Management**: Add, update, delete, and retrieve patient information.
