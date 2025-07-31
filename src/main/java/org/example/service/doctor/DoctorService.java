@@ -1,4 +1,4 @@
-package org.example.service;
+package org.example.service.doctor;
 
 public interface DoctorService {
 }
