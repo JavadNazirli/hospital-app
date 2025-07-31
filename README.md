@@ -17,65 +17,96 @@ The application follows a modular and layered architecture to ensure maintainabi
 - **`main`**: Entry point for the console application.
 - **`test`**: Unit tests for core functionalities.
 ```
-com.example.hospitalapp
-├── config
-│   ├── DatabaseConfig.java
-│   └── LoggingConfig.java
+hospital-app/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── example/
+│   │   │           └── hospitalapp/
+│   │   │               ├── config/
+│   │   │               │   ├── AppConfig.java
+│   │   │               │   ├── logging/
+│   │   │               │   │   ├── LogStrategy.java
+│   │   │               │   │   ├── Slf4jLogStrategy.java
+│   │   │               │   │   └── LogContext.java
+│   │   │               │   └── datasource/
+│   │   │               │       ├── DataSourceFactory.java
+│   │   │               │       ├── HikariDataSourceFactory.java
+│   │   │               │       └── JdbcTransactionManager.java
+│   │   │               │
+│   │   │               ├── patient/
+│   │   │               │   ├── controller/
+│   │   │               │   │   ├── PatientController.java
+│   │   │               │   │   └── PatientControllerImpl.java
+│   │   │               │   ├── service/
+│   │   │               │   │   ├── PatientService.java
+│   │   │               │   │   └── PatientServiceImpl.java
+│   │   │               │   ├── repository/
+│   │   │               │   │   ├── PatientRepository.java
+│   │   │               │   │   └── PatientRepositoryJdbcImpl.java
+│   │   │               │   ├── dto/
+│   │   │               │   │   ├── PatientRequest.java
+│   │   │               │   │   └── PatientResponse.java
+│   │   │               │   ├── mapper/
+│   │   │               │   │   ├── PatientMapper.java
+│   │   │               │   │   └── PatientMapperImpl.java
+│   │   │               │   ├── exception/
+│   │   │               │   │   └── PatientNotFoundException.java
+│   │   │               │   └── entity/
+│   │   │               │       └── Patient.java
+│   │   │               │
+│   │   │               ├── doctor/
+│   │   │               │   └── ... (same structure as patient)
+│   │   │               ├── appointment/
+│   │   │               │   └── ... (same structure as patient)
+│   │   │               │
+│   │   │               ├── common/
+│   │   │               │   ├── base/
+│   │   │               │   │   ├── BaseDto.java
+│   │   │               │   │   ├── BaseController.java
+│   │   │               │   │   ├── BaseService.java
+│   │   │               │   │   ├── BaseRepository.java
+│   │   │               │   │   └── BaseMapper.java
+│   │   │               │   ├── exception/
+│   │   │               │   │   ├── BaseException.java
+│   │   │               │   │   ├── RepositoryException.java
+│   │   │               │   │   └── DataAccessException.java
+│   │   │               │   ├── model/
+│   │   │               │   │   └── enums/
+│   │   │               │   │       ├── AppointmentStatus.java
+│   │   │               │   │       ├── Gender.java
+│   │   │               │   │       └── UserStatus.java
+│   │   │               │   ├── factory/
+│   │   │               │   │   ├── ValidatorFactory.java
+│   │   │               │   │   ├── ConverterFactory.java
+│   │   │               │   │   └── MapperFactory.java
+│   │   │               │   ├── dto/
+│   │   │               │   │   └── ErrorResponse.java
+│   │   │               │   └── util/
+│   │   │               │       ├── Constants.java
+│   │   │               │       ├── converter/
+│   │   │               │       │   └── DateConverter.java
+│   │   │               │       └── validation/
+│   │   │               │           ├── ValidationUtils.java
+│   │   │               │           └── ValidatorContext.java
+│   │   │               │
+│   │   │               └── main/
+│   │   │                   └── console/
+│   │   │                       └── MainConsoleApplication.java
+│   │
+│   └── resources/
+│       └── application.properties
 │
-├── controller
-│   ├── PatientController.java
-│   ├── DoctorController.java
-│   └── AppointmentController.java
+├── src/test/java/com/example/hospitalapp/
+│   ├── patient/
+│   │   └── PatientServiceTest.java
+│   └── common/
+│       └── util/
+│           └── DateConverterTest.java
 │
-├── service
-│   ├── PatientService.java
-│   ├── PatientServiceJdbcImpl.java
-│   ├── DoctorService.java
-│   ├── DoctorServiceJdbcImpl.java
-│   ├── AppointmentService.java
-│   └── AppointmentServiceJdbcImpl.java
-│
-├── repository
-│   ├── PatientRepository.java
-│   ├── PatientRepositoryJdbcImpl.java
-│   ├── DoctorRepository.java
-│   ├── DoctorRepositoryJdbcImpl.java
-│   ├── AppointmentRepository.java
-│   └── AppointmentRepositoryJdbcImpl.java
-│
-├── dto
-│   ├── request
-│   │   ├── PatientRequestDto.java
-│   │   ├── DoctorRequestDto.java
-│   │   └── AppointmentRequestDto.java
-│   ├── response
-│   │   ├── PatientResponseDto.java
-│   │   ├── DoctorResponseDto.java
-│   │   └── AppointmentResponseDto.java
-│   └── common
-│       └── ErrorDto.java
-│
-├── model
-│   ├── entity
-│   │   ├── Patient.java
-│   │   ├── Doctor.java
-│   │   └── Appointment.java
-│   └── enum
-│       └── AppointmentStatus.java
-│
-├── exception
-│   ├── PatientNotFoundException.java
-│   ├── DoctorNotFoundException.java
-│   └── AppointmentNotFoundException.java
-│
-├── util
-│   ├── ValidationUtils.java
-│   ├── DateConverter.java
-│   └── Constants.java
-│
-└── main
-    └── console
-        └── MainConsoleApplication.java
+└── pom.xml
+
 ```
 ## Features
 - **Patient Management**: Add, update, delete, and retrieve patient information.
