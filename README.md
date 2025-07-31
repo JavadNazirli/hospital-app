@@ -57,9 +57,46 @@ hospital-app/
 │   │   │               │       └── Patient.java
 │   │   │               │
 │   │   │               ├── doctor/
-│   │   │               │   └── ... (same structure as patient)
+│   │   │               │   ├── controller/
+│   │   │               │   │   ├── DoctorController.java
+│   │   │               │   │   └── DoctorControllerImpl.java
+│   │   │               │   ├── service/
+│   │   │               │   │   ├── DoctorService.java
+│   │   │               │   │   └── DoctorServiceImpl.java
+│   │   │               │   ├── repository/
+│   │   │               │   │   ├── DoctorRepository.java
+│   │   │               │   │   └── DoctorRepositoryJdbcImpl.java
+│   │   │               │   ├── dto/
+│   │   │               │   │   ├── DoctorRequest.java
+│   │   │               │   │   └── DoctorResponse.java
+│   │   │               │   ├── mapper/
+│   │   │               │   │   ├── DoctorMapper.java
+│   │   │               │   │   └── DoctorMapperImpl.java
+│   │   │               │   ├── exception/
+│   │   │               │   │   └── DoctorNotFoundException.java
+│   │   │               │   └── entity/
+│   │   │               │       └── Doctor.java
+│   │   │               │
 │   │   │               ├── appointment/
-│   │   │               │   └── ... (same structure as patient)
+│   │   │               │   ├── controller/
+│   │   │               │   │   ├── AppointmentController.java
+│   │   │               │   │   └── AppointmentControllerImpl.java
+│   │   │               │   ├── service/
+│   │   │               │   │   ├── AppointmentService.java
+│   │   │               │   │   └── AppointmentServiceImpl.java
+│   │   │               │   ├── repository/
+│   │   │               │   │   ├── AppointmentRepository.java
+│   │   │               │   │   └── AppointmentRepositoryJdbcImpl.java
+│   │   │               │   ├── dto/
+│   │   │               │   │   ├── AppointmentRequest.java
+│   │   │               │   │   └── AppointmentResponse.java
+│   │   │               │   ├── mapper/
+│   │   │               │   │   ├── AppointmentMapper.java
+│   │   │               │   │   └── AppointmentMapperImpl.java
+│   │   │               │   ├── exception/
+│   │   │               │   │   └── AppointmentNotFoundException.java
+│   │   │               │   └── entity/
+│   │   │               │       └── Appointment.java
 │   │   │               │
 │   │   │               ├── common/
 │   │   │               │   ├── base/
@@ -101,6 +138,10 @@ hospital-app/
 ├── src/test/java/com/example/hospitalapp/
 │   ├── patient/
 │   │   └── PatientServiceTest.java
+│   ├── doctor/
+│   │   └── DoctorServiceTest.java
+│   ├── appointment/
+│   │   └── AppointmentServiceTest.java
 │   └── common/
 │       └── util/
 │           └── DateConverterTest.java
