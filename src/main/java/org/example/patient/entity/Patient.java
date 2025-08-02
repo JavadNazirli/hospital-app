@@ -8,10 +8,10 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@AllArgsConstructor
+@Builder
 @ToString
 @NoArgsConstructor
-@Builder
+@AllArgsConstructor
 public class Patient {
     private Long id;
     private String firstName;
