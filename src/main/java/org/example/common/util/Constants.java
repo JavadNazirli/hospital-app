@@ -3,6 +3,7 @@ package org.example.common.util;
 import java.time.format.DateTimeFormatter;
 
 public class Constants {
+
     private Constants() {
         throw new UnsupportedOperationException("Utility class cannot be instantiated");
     }
