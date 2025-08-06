@@ -3,7 +3,6 @@ package org.example.common.util;
 import java.time.format.DateTimeFormatter;
 
 public class Constants {
-    // Private constructor to prevent instantiation
     private Constants() {
         throw new UnsupportedOperationException("Utility class cannot be instantiated");
     }
@@ -60,6 +59,7 @@ public class Constants {
         public static final String INVALID_DATE_RANGE = "Start date cannot be after end date";
         public static final String PAST_APPOINTMENT_DATE = "Cannot book appointment in the past";
     }
+
     public static final class SuccessMessages {
         public static final String PATIENT_CREATED = "Patient created successfully";
         public static final String PATIENT_UPDATED = "Patient updated successfully";
@@ -73,6 +73,7 @@ public class Constants {
         public static final String APPOINTMENT_CONFIRMED = "Appointment confirmed successfully";
         public static final String APPOINTMENT_COMPLETED = "Appointment completed successfully";
     }
+
     public static final class Queries {
         public static final String SELECT_ALL = "SELECT * FROM %s WHERE is_active = true";
         public static final String SELECT_BY_ID = "SELECT * FROM %s WHERE id = ? AND is_active = true";
